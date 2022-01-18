@@ -34,7 +34,7 @@ class Game {
       const sqB = this.squares[b]
       const sqC = this.squares[c]
 
-      if(sqA.value && sqA.value === sqB.value && sqA === sqC.value) {
+      if(sqA.value && sqA.value === sqB.value && sqA.value === sqC.value) {
         this.inProgress = false
         this.winner = sqA.value // 'O' or 'X' player
         sqA.isHighlighted = sqB.isHighlighted = sqC.isHighlighted = true
