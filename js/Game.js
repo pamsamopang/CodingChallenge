@@ -28,28 +28,24 @@ class Game {
       [2, 4, 6]
     ]
 
-    winningCombinations.forEach((wc => {
+    winningCombinations.forEach((wc) => {
       const [a, b, c] = wc
       const sqA = this.squares[a]
       const sqB = this.squares[b]
       const sqC = this.squares[c]
 
-      if(
-        sqA.value && 
-        sqA.value === sqB.value && 
-        sqA === sqC.value ) {
-
+      if(sqA.value && sqA.value === sqB.value && sqA === sqC.value) {
         this.inProgress = false
         this.winner = sqA.value // 'O' or 'X' player
         sqA.isHighlighted = sqB.isHighlighted = sqC.isHighlighted = true
       }
-    }))
+    })
 
     /**
      * check for tie
      * inProgress is false AND winner is null
      */
-    if(this.makeMove === this.squares.length) {
+    if(this.movesMade === this.squares.length) {
       this.inProgress = false
     }
   }
